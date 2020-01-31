@@ -15,7 +15,7 @@
 //  *
 //  * Adyen Dotnet API Library
 //  *
-//  * Copyright (c) 2019 Adyen B.V.
+//  * Copyright (c) 2020 Adyen B.V.
 //  * This file is open source and available under the MIT license.
 //  * See the LICENSE file for more info.
 //  */
@@ -35,6 +35,7 @@ namespace Adyen
         public string MerchantAccount { get; set; }
         public Environment Environment { get; set; }
         public string Endpoint { get; set; }
+        public string MarketPayEndpoint { get; set; }
         public string ApplicationName { get; set; }
         public IWebProxy Proxy { get; set; }
         public int HttpRequestTimeout { get; set; }
