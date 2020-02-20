@@ -1,4 +1,4 @@
-﻿#region Licence
+﻿#region License
 // /*
 //  *                       ######
 //  *                       ######
@@ -15,7 +15,7 @@
 //  *
 //  * Adyen Dotnet API Library
 //  *
-//  * Copyright (c) 2019 Adyen B.V.
+//  * Copyright (c) 2020 Adyen B.V.
 //  * This file is open source and available under the MIT license.
 //  * See the LICENSE file for more info.
 //  */
@@ -71,8 +71,6 @@ namespace Adyen.Test
             //Get payment method by name
             var visa = paymentMethods.FirstOrDefault(x => x.Name == "VISA");
             Assert.AreEqual(BrandCodes.Visa, visa.BrandCode);
-
-            //Assert.IsTrue(visa.IsCard());
         }
 
         [TestMethod]

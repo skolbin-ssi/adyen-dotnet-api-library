@@ -1,4 +1,4 @@
-﻿#region Licence
+﻿#region License
 // /*
 //  *                       ######
 //  *                       ######
@@ -15,11 +15,15 @@
 //  *
 //  * Adyen Dotnet API Library
 //  *
-//  * Copyright (c) 2019 Adyen B.V.
+//  * Copyright (c) 2020 Adyen B.V.
 //  * This file is open source and available under the MIT license.
 //  * See the LICENSE file for more info.
 //  */
 #endregion
+
+using Adyen.CloudApiSerialization.Converter;
+using Adyen.Model.Terminal;
+using Newtonsoft.Json;
 
 namespace Adyen.Model.Nexo
 {
@@ -49,7 +53,9 @@ namespace Adyen.Model.Nexo
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string SaleToAcquirerData;
+        [JsonConverter(typeof(JsonBase64Converter))]
+
+        public SaleToAcquirerData SaleToAcquirerData;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -86,5 +92,13 @@ namespace Adyen.Model.Nexo
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public CustomerOrderReqType[] CustomerOrderReq;
+
+        public SaleData()
+        {
+            if (SaleToAcquirerData == null)
+            {
+                SaleToAcquirerData = new SaleToAcquirerData();
+            }
+        }
     }
 }

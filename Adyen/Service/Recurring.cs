@@ -1,4 +1,4 @@
-﻿#region Licence
+﻿#region License
 // /*
 //  *                       ######
 //  *                       ######
@@ -15,7 +15,7 @@
 //  *
 //  * Adyen Dotnet API Library
 //  *
-//  * Copyright (c) 2019 Adyen B.V.
+//  * Copyright (c) 2020 Adyen B.V.
 //  * This file is open source and available under the MIT license.
 //  * See the LICENSE file for more info.
 //  */
@@ -40,35 +40,16 @@ namespace Adyen.Service
 
         public RecurringDetailsResult ListRecurringDetails(RecurringDetailsRequest request)
         {
-            RecurringDetailsResult result = null;
-            try
-            {
-                var jsonRequest = Util.JsonOperation.SerializeRequest(request);
-                var jsonResponse = _listRecurringDetails.Request(jsonRequest);
-                result = Util.JsonOperation.Deserialize<RecurringDetailsResult>(jsonResponse);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return result;
-
+            var jsonRequest = Util.JsonOperation.SerializeRequest(request);
+            var jsonResponse = _listRecurringDetails.Request(jsonRequest);
+            return Util.JsonOperation.Deserialize<RecurringDetailsResult>(jsonResponse);
         }
 
         public DisableResult Disable(DisableRequest disableRequest)
         {
-            DisableResult result = null;
-            try
-            {
-                var jsonRequest = Util.JsonOperation.SerializeRequest(disableRequest);
-                var jsonResponse = _disable.Request(jsonRequest);
-                result = Util.JsonOperation.Deserialize<DisableResult>(jsonResponse);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return result;
-        } 
+            var jsonRequest = Util.JsonOperation.SerializeRequest(disableRequest);
+            var jsonResponse = _disable.Request(jsonRequest);
+            return Util.JsonOperation.Deserialize<DisableResult>(jsonResponse);
+        }
     }
 }

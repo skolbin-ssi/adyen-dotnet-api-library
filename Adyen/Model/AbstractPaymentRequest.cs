@@ -1,4 +1,4 @@
-﻿#region Licence
+﻿#region License
 // /*
 //  *                       ######
 //  *                       ######
@@ -15,7 +15,7 @@
 //  *
 //  * Adyen Dotnet API Library
 //  *
-//  * Copyright (c) 2019 Adyen B.V.
+//  * Copyright (c) 2020 Adyen B.V.
 //  * This file is open source and available under the MIT license.
 //  * See the LICENSE file for more info.
 //  */
@@ -101,5 +101,10 @@ namespace Adyen.Model
         [DataMember(Name = "applicationInfo", EmitDefaultValue = false)]
         public ApplicationInformation.ApplicationInfo ApplicationInfo { get;set; }
 
+        [DataMember(Name = "enableRealTimeUpdate", EmitDefaultValue = false)]
+        public bool EnableRealTimeUpdate { get; set; }
+
+        [DataMember(Name = "threeDSAuthenticationOnly", EmitDefaultValue = false)]
+        public bool ThreeDSAuthenticationOnly { get; set; }
     }
 }
